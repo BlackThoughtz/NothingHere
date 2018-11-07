@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Group 29</h1>
+    <p class="lead">Tl space DRRINKERS!!!  ts parent.</p>
+  </div>
+</div>
+
+<div class="container">
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bar of bars; index as i">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{bar.name}}</td>
+        <td>{{bar.license}}</td>
+        <td>{{bar.addr}}</td>
+        <td>{{bar.city}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
