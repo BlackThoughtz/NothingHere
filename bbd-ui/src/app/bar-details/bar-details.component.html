@@ -1,1 +1,11 @@
-{{barName}}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{barName}}</h1>
+    <p class="bar-details" *ngIf="barDetails">
+      {{barDetails ?.address}}<span *ngIf="barDetails.address && barDetails.city"> | </span>
+      {{barDetails.city}}
+      <br>
+      {{barDetails?.phone}}
+    </p>
+  </div>
+</div>

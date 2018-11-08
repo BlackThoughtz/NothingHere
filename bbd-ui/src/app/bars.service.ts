@@ -3,10 +3,11 @@ import {HttpClient} from "@angular/common/http";
 
 export interface Bar {
   name: string;
-  license: string;
+  license: number;
+  address: string;
   city: string;
   phone: string;
-  addr: string;
+
 
 }
 @Injectable({

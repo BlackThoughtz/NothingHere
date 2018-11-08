@@ -6,15 +6,15 @@ engine = create_engine(config.database_uri)
 
 def get_bars():
     with engine.connect() as con:
-        rs = con.execute("SELECT name, license, city, phone, addr FROM tbars;")
+        rs = con.execute("SELECT name, license, city,address, phone FROM BARS;")
         return [dict(row) for row in rs]
 
 def find_bar(name):
     with engine.connect() as con:
         query = sql.text(
-            "SELECT name, license, city, phone, addr FROM BARS WHERE name = :name;"
+            "SELECT name, license, city, address, phone FROM BARS WHERE name = :name;"
         )
-        rs = con.execute(query, name = name)
+        rs = con.execute(query, name=name)
         result = rs.first()
         if result is None:
             return None
