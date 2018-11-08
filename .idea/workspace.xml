@@ -4,9 +4,6 @@
     <list default="true" id="d82c1497-d6c0-4907-8c43-2535d4b50488" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarBeerDrinker/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/BarBeerDrinker/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bbd-ui/src/app/bars.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bbd-ui/src/app/bars.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bbd-ui/src/app/welcome/welcome.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bbd-ui/src/app/welcome/welcome.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,10 +71,10 @@
           <entry key="css" value="128" />
           <entry key="html" value="1010" />
           <entry key="json" value="751" />
-          <entry key="py" value="2193" />
+          <entry key="py" value="2379" />
           <entry key="sql" value="18" />
           <entry key="ts" value="1479" />
-          <entry key="txt" value="12" />
+          <entry key="txt" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -85,8 +82,8 @@
           <entry key="CSS" value="128" />
           <entry key="HTML" value="1010" />
           <entry key="JSON" value="751" />
-          <entry key="PLAIN_TEXT" value="334" />
-          <entry key="Python" value="2193" />
+          <entry key="PLAIN_TEXT" value="405" />
+          <entry key="Python" value="2379" />
           <entry key="Scratch" value="18" />
           <entry key="TypeScript" value="1479" />
         </counts>
@@ -155,24 +152,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BarBeerDrinker/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="428">
+              <caret line="109" column="44" lean-forward="true" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1541711802918" expanded="true" signature="238:239" ph="..." />
+                <marker date="1541716167289" expanded="true" signature="238:239" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="289">
+              <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding>
-                <marker date="1541715496918" expanded="true" signature="138:143" ph="..." />
-                <marker date="1541715496918" expanded="true" signature="315:320" ph="..." />
+                <marker date="1541716777373" expanded="true" signature="138:143" ph="..." />
+                <marker date="1541716777373" expanded="true" signature="315:320" ph="..." />
               </folding>
             </state>
           </provider>
@@ -196,7 +193,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -240,11 +237,11 @@
         <option value="$PROJECT_DIR$/bbd-ui/src/app/welcome/welcome.component.ts" />
         <option value="$PROJECT_DIR$/Notes" />
         <option value="$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts" />
-        <option value="$PROJECT_DIR$/BarBeerDrinker/__init__.py" />
         <option value="$PROJECT_DIR$/bbd-ui/src/app/bars.service.ts" />
         <option value="$PROJECT_DIR$/bbd-ui/src/app/welcome/welcome.component.html" />
-        <option value="$PROJECT_DIR$/BarBeerDrinker/database.py" />
         <option value="$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html" />
+        <option value="$PROJECT_DIR$/BarBeerDrinker/__init__.py" />
+        <option value="$PROJECT_DIR$/BarBeerDrinker/database.py" />
       </list>
     </option>
   </component>
@@ -430,6 +427,21 @@
       <option name="presentableId" value="Default" />
       <updated>1541454572826</updated>
     </task>
+    <task id="LOCAL-00001" summary="Up to bar details before menu">
+      <created>1541715639480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541715639480</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added init functions from git">
+      <created>1541716193566</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541716193566</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -457,10 +469,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32968238" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32968238" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.35158816" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.35158816" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32968238" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32858709" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.329718" />
@@ -499,8 +511,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Up to bar details before menu" />
+    <MESSAGE value="Added init functions from git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added init functions from git" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/HelloWorld.py" />
@@ -648,28 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BarBeerDrinker/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1541711802918" expanded="true" signature="238:239" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <marker date="1541715496918" expanded="true" signature="138:143" ph="..." />
-            <marker date="1541715496918" expanded="true" signature="315:320" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -694,6 +699,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarBeerDrinker/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="109" column="44" lean-forward="true" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1541716167289" expanded="true" signature="238:239" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <marker date="1541716777373" expanded="true" signature="138:143" ph="..." />
+            <marker date="1541716777373" expanded="true" signature="315:320" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
