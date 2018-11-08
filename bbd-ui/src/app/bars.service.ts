@@ -22,5 +22,9 @@ export class BarsService {
   return this.http.get<Bar[]>('/api/bar');
 }
 
+  getBar(bar:String){
+    return this.http.get<Bar>('/api/bar/' + bar);
+  }
+
 }
 

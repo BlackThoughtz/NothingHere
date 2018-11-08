@@ -25,9 +25,9 @@
             "styles": [
 
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/primeicones/primeicons.css",
+              "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.css",
-              "node_modules/primeng/resources/themes/nova-light/themes.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
               "src/styles.css"
             ],
             "scripts": [

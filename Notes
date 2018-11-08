@@ -1,0 +1,5 @@
+Whenever you want to create a new page type in terminal "ng generate component <page name>"
+Add routes in routing module
+Add anchor to values to make them clickable
+go to newly created component add activated route and services
+
