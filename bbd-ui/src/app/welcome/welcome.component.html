@@ -1,38 +1,36 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Group 29</h1>
-    <p class="lead">Tl space DRRINKERS!!!  ts parent.</p>
+    <h1 class="display-4">Welcome to Bar Beer Drinker!</h1>
+    <p class="lead">This is a demo application to learn how to create a clean, responsive web interface.</p>
   </div>
 </div>
 
 <div class="container">
 
-<p-table [value]="bars">
-  <ng-template pTemplate="header">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">License</th>
-      <th scope="col">Address </th>
-      <th scope="col">City</th>
-      <th scope="col">Phone</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-bar>
-    <tr>
-      <td>
-        <a routerLink="/bars/{{bar.name}}">
-          {{bar.name}}
-        </a>
-
-      </td>
-      <td>{{bar.license}}</td>
-      <td>{{bar.address}}</td>
-      <td>{{bar.city}}</td>
-      <td>{{bar.phone}}</td>
-    </tr>
-  </ng-template>
-
-</p-table>
+  <p-table [value]="bars">
+    <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+          <th>Licence</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Phone</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-bar>
+        <tr>
+          <td>
+            <a routerLink="/bars/{{ bar.name }}">
+              {{ bar.name }}
+            </a>
+          </td>
+          <td>{{ bar.license }}</td>
+          <td>{{ bar.address }}</td>
+          <td>{{ bar.city }}</td>
+          <td>{{ bar.phone }}</td>
+        </tr>
+    </ng-template>
+  </p-table>
 </div>
 
 <br><br>

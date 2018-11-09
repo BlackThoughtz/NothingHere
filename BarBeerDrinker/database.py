@@ -1,4 +1,5 @@
-from sqlalchemy import create_engine, sql
+from sqlalchemy import create_engine
+from sqlalchemy import sql
 
 from BarBeerDrinker import config
 
@@ -6,14 +7,15 @@ engine = create_engine(config.database_uri)
 
 def get_bars():
     with engine.connect() as con:
-        rs = con.execute("SELECT name, license, city,address, phone FROM BARS;")
+        rs = con.execute("SELECT name, license, city, phone, address FROM BARS;")
         return [dict(row) for row in rs]
 
 def find_bar(name):
     with engine.connect() as con:
         query = sql.text(
-            "SELECT name, license, city, address, phone FROM BARS WHERE name = :name;"
+            "SELECT name, license, city, phone, address FROM BARS WHERE name = :name;"
         )
+
         rs = con.execute(query, name=name)
         result = rs.first()
         if result is None:
@@ -23,22 +25,23 @@ def find_bar(name):
 def filter_beers(max_price):
     with engine.connect() as con:
         query = sql.text(
-            "SELECT * FROM Sells WHERE price < :max_price;"
+            "SELECT * FROM sells WHERE price < :max_price;"
         )
 
         rs = con.execute(query, max_price=max_price)
         results = [dict(row) for row in rs]
         for r in results:
             r['price'] = float(r['price'])
-
         return results
+
 
 def get_bar_menu(bar_name):
     with engine.connect() as con:
         query = sql.text(
-            'SELECT a.barname, a.item, a.price, a.manufacturer \
-            FROM menu as a \
-            WHERE a.bar = :bar;\
+            'SELECT a.item, a.price, a.manufacturer \
+            FROM sells as a \
+            WHERE a.barname = :bar\
+            ORDER BY manufacturer asc;\
             ')
         rs = con.execute(query, bar=bar_name)
         results = [dict(row) for row in rs]

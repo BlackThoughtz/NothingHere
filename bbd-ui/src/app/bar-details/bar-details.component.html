@@ -1,11 +1,32 @@
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">{{barName}}</h1>
-    <p class="bar-details" *ngIf="barDetails">
-      {{barDetails ?.address}}<span *ngIf="barDetails.address && barDetails.city"> | </span>
-      {{barDetails.city}}
-      <br>
-      {{barDetails?.phone}}
-    </p>
-  </div>
+    <div class="container">
+        <h1 class="display-4">{{ barName }}</h1>
+        <p class="bar-details" *ngIf="barDetails">
+            {{ barDetails?.addr }} <span *ngIf="barDetails.addr && barDetails.city">|</span> {{ barDetails?.city }}
+            <br>
+            {{ barDetails?.phone }}
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center font-weight-light">Menu</h2>
+    <br>
+    <p-table [value]="menu">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Beer</th>
+                <th>Manufacturer</th>
+                <th>Price</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td><a routerLink="/beers/{{ item.beer }}">{{ item.item }}</a></td>
+                <td>{{ item.manufacturer }}</td>
+                <td>{{ item.price | currency }}</td>
+
+            </tr>
+        </ng-template>
+    </p-table>
 </div>

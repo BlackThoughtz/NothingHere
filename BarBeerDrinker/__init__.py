@@ -4,11 +4,9 @@ from flask import make_response
 from flask import request
 import json
 
-
 from BarBeerDrinker import database
 
 app = Flask(__name__)
-
 
 @app.route('/api/bar', methods=["GET"])
 def get_bars():
@@ -22,7 +20,7 @@ def find_bar(name):
             raise ValueError("Bar is not specified.")
         bar = database.find_bar(name)
         if bar is None:
-            return make_response("No bar with the given name", 404)
+            return make_response("No bar found with the given name.", 404)
         return jsonify(bar)
     except ValueError as e:
         return make_response(str(e), 400)
@@ -111,5 +109,25 @@ def get_drinker(name):
         return jsonify(database.get_drinker_info(name))
     except ValueError as e:
         return make_response(str(e), 400)
+    except Exception as e:
+        return make_response(str(e), 500)
+
+
+@app.route('/api/bars-selling/<beer>', methods=['GET'])
+def find_bars_selling(beer):
+    try:
+        if beer is None:
+            raise ValueError('Beer not specified')
+        return jsonify(database.get_bars_selling(beer))
+    except ValueError as e:
+        return make_response(str(e), 400)
+    except Exception as e:
+        return make_response(str(e), 500)
+
+
+@app.route('/api/frequents-data', methods=['GET'])
+def get_bar_frequent_counts():
+    try:
+        return jsonify(database.get_bar_frequent_counts())
     except Exception as e:
         return make_response(str(e), 500)
