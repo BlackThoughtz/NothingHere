@@ -1,5 +1,40 @@
+Angular
+
+ng serve -- open (Auto opens after serve)
+
+
+app.component.ts— the component class code, written in TypeScript.
+app.component.html— the component template, written in HTML.
+app.component.css— the component's private CSS styles.
+
+
 Whenever you want to create a new page type in terminal "ng generate component <page name>"
+
+    The CLI command creates a new folder, src/app/<page name>/
+
+You used *ngFor to display a list.
+You used *ngIf to conditionally include or exclude a block of HTML.
+
 Add routes in routing module
+
 Add anchor to values to make them clickable
+
 go to newly created component add activated route and services
 
+CSS
+
+Style specific parts like
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+
+
+Universal
+
+{
+  font-family: Arial, Helvetica, sans-serif;
+}

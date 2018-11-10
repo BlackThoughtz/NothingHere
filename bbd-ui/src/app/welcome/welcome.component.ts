@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { BarsService, Bar } from '../bars.service';
 
+
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -9,6 +11,7 @@ import { BarsService, Bar } from '../bars.service';
 })
 export class WelcomeComponent implements OnInit {
 
+  title = 'Group 29';
   bars: Bar[];
 
   constructor(

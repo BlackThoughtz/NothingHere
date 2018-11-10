@@ -41,7 +41,7 @@ def get_bar_menu(bar_name):
             'SELECT a.item, a.price, a.manufacturer \
             FROM sells as a \
             WHERE a.barname = :bar\
-            ORDER BY manufacturer asc;\
+            ORDER BY manufacturer desc;\
             ')
         rs = con.execute(query, bar=bar_name)
         results = [dict(row) for row in rs]
