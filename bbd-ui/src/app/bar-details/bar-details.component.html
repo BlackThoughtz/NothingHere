@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="display-4">{{ barName }}</h1>
         <p class="bar-details" *ngIf="barDetails">
-            {{ barDetails?.addr }} <span *ngIf="barDetails.addr && barDetails.city">|</span> {{ barDetails?.city }}
+            {{ barDetails?.address }} <span *ngIf="barDetails.address && barDetails.city">|</span> {{ barDetails?.city }}
             <br>
             {{ barDetails?.phone }}
         </p>
