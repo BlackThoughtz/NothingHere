@@ -1,0 +1,47 @@
+Top 10 Drinkers by money spent
+
+'SELECT sum(gross) as Spent, Drinkers.DName as Name \
+From BillDat, Drinkers \
+Where BillDat.Uid = Drinkers.User_ID \
+Group by Uid \
+order by spent desc limit 10'
+
+
+
+Beer Sales Query
+
+From (
+select *
+from TRANSACTIONS
+Where item IN(select name as item from beers)
+
+
+
+1.Given a drinker, show all his/her transactions ordered by time and grouped by different bars.
+
+Select *
+from BillDat, Drinkers
+Where Uid = '98-4301572' AND BillDat.Uid = Drinkers.User_ID
+Group by BillDat.License
+order by Time;
+
+2.Show bar graphs of beers s/he orders the most.
+
+Select *, count(item) as ordered
+from (select *
+from TRANSACTIONS
+Where item IN(select name as item from beers)) as tab
+Where tab.Tid IN (Select `BillDat`.`﻿Tid` From BillDat  Where BillDat.Uid = '01-7232415')
+Group by item
+Order by ordered desc
+
+3.Drinkers spending in different bars, on different dates/weeks/months
+
+
+4. Given a bar top10 drinkers who are largest spenders
+
+Select *, Sum(Gross) as Spent
+from BillDat
+Where BillDat.License = 3
+Group by BillDat.Uid
+order by Spent

@@ -1,1 +1,2 @@
-database_uri = "mysql+pymysql://edb:OurPassword!@edbproject.chxmewtjeajj.us-east-2.rds.amazonaws.com:3306/BarsProject"
+database_uri = "mysql+pymysql://db:Password@dbproject.coqisatbvgaf.us-east-2.rds.amazonaws.com:3306/BarBeerDrinker"
+

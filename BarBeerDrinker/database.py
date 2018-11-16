@@ -6,13 +6,13 @@ engine = create_engine(config.database_uri)
 
 def get_bars():
     with engine.connect() as con:
-        rs = con.execute("SELECT name, license, city, phone, address FROM BARS;")
+        rs = con.execute("SELECT name, license, city, phone, address FROM bars;")
         return [dict(row) for row in rs]
 
 def find_bar(name):
     with engine.connect() as con:
         query = sql.text(
-            "SELECT name, license, city, phone, address FROM BARS WHERE name = :name;"
+            "SELECT name, license, city, phone, address FROM bars WHERE name = :name;"
         )
 
         rs = con.execute(query, name=name)
@@ -76,7 +76,7 @@ def get_bar_frequent_counts():
 
 def get_bar_cities():
     with engine.connect() as con:
-        rs = con.execute('SELECT DISTINCT city FROM BARS;')
+        rs = con.execute('SELECT DISTINCT city FROM bars;')
         return [row['city'] for row in rs]
 
 
@@ -125,3 +125,13 @@ def get_drinker_info(drinker_name):
         if result is None:
             return None
         return dict(result)
+
+
+def top_10_drinkers(bar_name):
+    with engine.connect() as con:
+        query = sql.text()
+        rs = con.execute(query, bar = bar_name)
+        results = [dict(row) for row in rs]
+        for r in results:
+            r['spent'] = float(r['spent'])
+        return results
