@@ -91,7 +91,7 @@ def get_beers():
 def get_beer_manufacturers(beer):
     with engine.connect() as con:
         if beer is None:
-            rs = con.execute('SELECT DISTINCT manufacturer FROM beers;')
+            rs = con.execute('SELECT DISTINCT manufacturer FROM beers;'
             return [row['manf'] for row in rs]
 
         query = sql.text('SELECT manufacturer FROM beers WHERE name = :beer;')
@@ -112,14 +112,14 @@ def get_likes(drinker_name):
     """Gets a list of beers liked by the drinker provided."""
 
     with engine.connect() as con:
-        query = sql.text('SELECT beer FROM Likes WHERE name = :name;')
+        query = sql.text('SELECT beer FROM likes WHERE name = :name;')
         rs = con.execute(query, name=drinker_name)
         return [row['beer'] for row in rs]
 
 
 def get_drinker_info(drinker_name):
     with engine.connect() as con:
-        query = sql.text('SELECT * FROM drinkers WHERE DName = :name;')
+        query = sql.text('SELECT * FROM Drinkers WHERE DName = :name;')
         rs = con.execute(query, name=drinker_name)
         result = rs.first()
         if result is None:
@@ -127,11 +127,12 @@ def get_drinker_info(drinker_name):
         return dict(result)
 
 
-def top_10_drinkers(bar_name):
+# for  top drinkers who are largest spenders,
+
+def get_top_drinkers():
     with engine.connect() as con:
-        query = sql.text()
-        rs = con.execute(query, bar = bar_name)
-        results = [dict(row) for row in rs]
-        for r in results:
-            r['spent'] = float(r['spent'])
-        return results
+        query = sql.text(
+
+        )
+
+

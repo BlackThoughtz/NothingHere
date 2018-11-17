@@ -157,3 +157,50 @@ order by sold desc
 
 
 
+Patterns:
+1. Bars Sells The most Beer at night
+
+Select *
+From bills
+Join (Select blicense, Sum(Gross) as SoldEarly
+From bills
+Where Time <= 1600
+) as early on bills.blicense = early.blicense
+
+Join (Select blicense, Sum(Gross) as SoldMid
+From bills
+Where Time > 1600 And Time <= 2000
+) as midday on bills.blicense = midday.blicense
+
+Join (Select blicense, Sum(Gross) as SoldLate
+From bills
+Where Time < 2000
+) as late on bills.blicense = late.blicense
+
+limit 1
+
+2. States with Higher population sell more product
+
+Select State, StateGross
+From (
+Select *, Sum(gross) as StateGross
+from bills
+where blicense IN (Select lic From bars Where state = 'NJ')
+UNION
+Select *, Sum(gross) as StateGross
+from bills
+where blicense IN (Select lic From bars Where state = 'NY')
+UNION
+Select *, Sum(gross) as StateGross
+from bills
+where blicense IN (Select lic From bars Where state = 'CT')
+) as gross Join bars on bars.lic = gross.blicense
+
+Order by StateGross desc
+
+3.
+
+4.
+
+5.
+
