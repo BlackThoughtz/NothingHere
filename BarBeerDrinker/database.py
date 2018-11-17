@@ -369,7 +369,7 @@ def beer_sales_by_time(beer):
                 WHERE item IN(SELECT name AS item FROM beers)
                  )as beersales
             LEFT JOIN bills ON beersales.Tid = `bills`.`﻿Trid`
-            WHERE Time > 1600 AND Time  <= 2000 AND Item = 'Budweiser'
+            WHERE Time > 1600 AND Time  <= 2000 AND Item = :beer
             UNION
             SELECT Time, COUNT(item) AS SoldLate
             FROM (
@@ -378,7 +378,7 @@ def beer_sales_by_time(beer):
                 WHERE item IN(SELECT name AS item FROM beers)
                  )as beersales
             LEFT JOIN bills ON beersales.Tid = `bills`.`﻿Trid`
-            WHERE Time > 2000 AND Item = 'Budweiser'
+            WHERE Time > 2000 AND Item = :beer
             ORDER BY Time ASC 
         """)
 
