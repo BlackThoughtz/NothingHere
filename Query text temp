@@ -1,7 +1,7 @@
 #Given a bar
 
  show bar graphs – 1) for  top drinkers who are largest spenders,
-
+✔
 Select DName as Drinker, SUM(Gross) as spent
 from bills
 Where bills.License = 1
@@ -9,19 +9,31 @@ Group by Uid
 Order by spent desc
 
 2) for beers which are most popular
-
-Select Item as beers,count(item) as sold
-From (
-select *
-from trans
-Where item IN(select name as item from beers)
-) as beersales
-Where license = 2
+✔
+"""
+Select item, barname,count(item) as sold
+  From(
+    Select item, tid, barname
+    From (
+    select *
+    from TRANSACTIONS
+    Where item IN(select name as item from beers)
+     )as beersales
+     Join bars on beersales.license = bars.lic
+     ) as beerswnames
+Where barname = 'Dive Bar'
 Group by item
-order by sold desc
+Order by sold
+Limit 10
+
+
+
+
+
+"""
 
 3) for manufacturers who sell the most beers.
-
+✔
 Select manufacturer, Count(manufacturer) as sold
 From (Select  name, manufacturer, License,Tid
 From(select *
@@ -35,47 +47,47 @@ Group by Manufacturer
 order by sold desc
 
 4 Demonstrate time distribution of sales, show what are the busiest periods of the day
+✔
+    Select bills.barname, SoldEarly, SoldMid, SoldLate
+    From bills
+    Join (Select barname, Sum(Gross) as SoldEarly
+    From bills
+    Where barname = 1 And Time <= 1600
+    ) as early on bills.barname = early.barname
 
-Select *
-From bills
-Join (Select License, Sum(Gross) as SoldEarly
-From bills
-Where License = 1 And Time <= 1600
-) as early on bills.License = early.License
+    Join (Select barname, Sum(Gross) as SoldMid
+    From bills
+    Where barname = 1 And Time > 1600 And Time <= 2000
+    ) as midday on bills.barname = midday.barname
 
-Join (Select License, Sum(Gross) as SoldMid
-From bills
-Where License = 1 And Time > 1600 And Time <= 2000
-) as midday on bills.License = midday.License
-
-Join (Select License, Sum(Gross) as SoldLate
-From bills
-Where License = 1 And Time < 2000
-) as late on bills.License = late.License
+    Join (Select barname, Sum(Gross) as SoldLate
+    From bills
+    Where barname = 1 And Time < 2000
+    ) as late on bills.barname = late.barname
 
 
 
 
 5. Busiest day of the week
-
+✔
 Select barname, `bills`.`﻿Date`, aday, Sum(Gross) as DailyTotal
 From bills
-Where License = 1
+Where barname = 1
 group by aday
 order by `bills`.`﻿Date`
 
 DRINKER PAGE
 
 1.Given a drinker, show all his/her transactions ordered by time and grouped by different bars
-
+✔
 Select *
 from BillDat, Drinkers
 Where Uid = '98-4301572' AND BillDat.Uid = Drinkers.User_ID
-Group by BillDat.License
+Group by BillDat.barname
 order by Time;
 
 2.Show bar graphs of beers s/he orders the most.
-
+✔
 Select *, count(item) as ordered
 from (select *
 from TRANSACTIONS
@@ -85,7 +97,7 @@ Group by item
 Order by ordered desc
 
 3.Drinkers spending in different bars, on different dates/weeks/months
-
+✔
 select *, sum(gross) as spent
 from bills
 where bills.Uid = '19-3651346'
@@ -116,8 +128,8 @@ Beer Sales with barname
      ) as beerswnames
 
 
-1.
-
+1. Show top 10 places where beer sells the most
+✔
 Select item, barname, Count(item) as sold
 From(
 Select item, tid, barname
@@ -135,25 +147,102 @@ order by sold desc
 
 
 2.show also drinkers who are the biggest consumers of this beer
-
+✔
 Select Item, Dname , count(item) as sold
 From (
 	select *
     from TRANSACTIONS
     Where item IN(select name as item from beers)
      )as beersales
-Join bills on beersales.license = bills.License
+Join bills on beersales.license = bills.blicense
 Where Item = 'Budweiser'
 group by Dname
 order by sold desc
 
 3 time distribution of when this beer sells the most.
+✔
+
+Select Time, Count(item) as soldEarly
+From (
+	select *
+    from TRANSACTIONS
+    Where item IN(select name as item from beers)
+     )as beersales
+lEFT Join bills on beersales.Tid = `bills`.`﻿Trid`
+Where Time <= 1600 and Item = 'Budweiser'
+
+Union
+
+Select Time, Count(item) as SoldMid
+From (
+	select *
+    from TRANSACTIONS
+    Where item IN(select name as item from beers)
+     )as beersales
+lEFT Join bills on beersales.Tid = `bills`.`﻿Trid`
+Where Time > 1600 AND Time  <= 2000 and Item = 'Budweiser'
+
+Union
+Select Time, Count(item) as SoldLate
+From (
+	select *
+    from TRANSACTIONS
+    Where item IN(select name as item from beers)
+     )as beersales
+lEFT Join bills on beersales.Tid = `bills`.`﻿Trid`
+Where Time > 2000 and Item = 'Budweiser'
+
+order by Time asc
 
 
 
 
 
 
+Patterns:
+1. Bars Generally Sell The most Beer at night
 
+Select *
+From bills
+Join (Select blicense, Sum(Gross) as SoldEarly
+From bills
+Where Time <= 1600
+) as early on bills.blicense = early.blicense
 
+Join (Select blicense, Sum(Gross) as SoldMid
+From bills
+Where Time > 1600 And Time <= 2000
+) as midday on bills.blicense = midday.blicense
+
+Join (Select blicense, Sum(Gross) as SoldLate
+From bills
+Where Time < 2000
+) as late on bills.blicense = late.blicense
+
+limit 1
+
+2. States with Higher population sell more product
+
+Select State, StateGross
+From (
+Select *, Sum(gross) as StateGross
+from bills
+where blicense IN (Select lic From bars Where state = 'NJ')
+UNION
+Select *, Sum(gross) as StateGross
+from bills
+where blicense IN (Select lic From bars Where state = 'NY')
+UNION
+Select *, Sum(gross) as StateGross
+from bills
+where blicense IN (Select lic From bars Where state = 'CT')
+) as gross Join bars on bars.lic = gross.blicense
+
+Order by StateGross desc
+
+3.
+
+4.
+
+5.
 
