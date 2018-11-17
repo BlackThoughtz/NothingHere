@@ -1,23 +1,72 @@
-Top 10 Drinkers by money spent
+#Given a bar
 
-'SELECT sum(gross) as Spent, Drinkers.DName as Name \
-From BillDat, Drinkers \
-Where BillDat.Uid = Drinkers.User_ID \
-Group by Uid \
-order by spent desc limit 10'
+ show bar graphs – 1) for  top drinkers who are largest spenders,
 
+Select DName as Drinker, SUM(Gross) as spent
+from bills
+Where bills.License = 1
+Group by Uid
+Order by spent desc
 
+2) for beers which are most popular
 
-Beer Sales Query
-
+Select Item as beers,count(item) as sold
 From (
 select *
-from TRANSACTIONS
+from trans
 Where item IN(select name as item from beers)
+) as beersales
+Where license = 2
+Group by item
+order by sold desc
+
+3) for manufacturers who sell the most beers.
+
+Select manufacturer, Count(manufacturer) as sold
+From (Select  name, manufacturer, License,Tid
+From(select *
+from trans
+Where item IN(select name as item from beers)
+) as beersales
+Join beers On beersales.item = beers.name
+) saleswman
+Where license = 2
+Group by Manufacturer
+order by sold desc
+
+4 Demonstrate time distribution of sales, show what are the busiest periods of the day
+
+Select *
+From bills
+Join (Select License, Sum(Gross) as SoldEarly
+From bills
+Where License = 1 And Time <= 1600
+) as early on bills.License = early.License
+
+Join (Select License, Sum(Gross) as SoldMid
+From bills
+Where License = 1 And Time > 1600 And Time <= 2000
+) as midday on bills.License = midday.License
+
+Join (Select License, Sum(Gross) as SoldLate
+From bills
+Where License = 1 And Time < 2000
+) as late on bills.License = late.License
 
 
 
-1.Given a drinker, show all his/her transactions ordered by time and grouped by different bars.
+
+5. Busiest day of the week
+
+Select barname, `bills`.`﻿Date`, aday, Sum(Gross) as DailyTotal
+From bills
+Where License = 1
+group by aday
+order by `bills`.`﻿Date`
+
+DRINKER PAGE
+
+1.Given a drinker, show all his/her transactions ordered by time and grouped by different bars
 
 Select *
 from BillDat, Drinkers
@@ -37,11 +86,74 @@ Order by ordered desc
 
 3.Drinkers spending in different bars, on different dates/weeks/months
 
+select *, sum(gross) as spent
+from bills
+where bills.Uid = '19-3651346'
+group by `bills`.`﻿Date`
+order by spent desc
 
-4. Given a bar top10 drinkers who are largest spenders
 
-Select *, Sum(Gross) as Spent
-from BillDat
-Where BillDat.License = 3
-Group by BillDat.Uid
-order by Spent
+BEER PAGE:
+
+Beer Sales Query
+
+From (
+select *
+from TRANSACTIONS
+Where item IN(select name as item from beers)
+) as beersales
+
+
+Beer Sales with barname
+    From(
+    Select item, tid, barname
+    From (
+    select *
+    from TRANSACTIONS
+    Where item IN(select name as item from beers)
+     )as beersales
+     Join bars on beersales.license = bars.lic
+     ) as beerswnames
+
+
+1.
+
+Select item, barname, Count(item) as sold
+From(
+Select item, tid, barname
+From (
+select *
+from TRANSACTIONS
+Where item IN(select name as item from beers)
+ )as beersales
+ Join bars on beersales.license = bars.lic
+ ) as beerswnames
+where item = 'Corona Familiar'
+Group by barname
+order by sold desc
+
+
+
+2.show also drinkers who are the biggest consumers of this beer
+
+Select Item, Dname , count(item) as sold
+From (
+	select *
+    from TRANSACTIONS
+    Where item IN(select name as item from beers)
+     )as beersales
+Join bills on beersales.license = bills.License
+Where Item = 'Budweiser'
+group by Dname
+order by sold desc
+
+3 time distribution of when this beer sells the most.
+
+
+
+
+
+
+
+
+

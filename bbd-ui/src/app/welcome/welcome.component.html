@@ -11,22 +11,24 @@
     <ng-template pTemplate="header">
         <tr>
           <th>Name</th>
-          <th>Licence</th>
+          <th>License</th>
           <th>Address</th>
           <th>City</th>
+          <th>State</th>
           <th>Phone</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-bar>
         <tr>
           <td>
-            <a routerLink="/bars/{{ bar.name }}">
-              {{ bar.name }}
+            <a routerLink="/bars/{{ bar.barname }}">
+              {{ bar.barname }}
             </a>
           </td>
-          <td>{{ bar.license }}</td>
+          <td>{{ bar.lic }}</td>
           <td>{{ bar.address }}</td>
           <td>{{ bar.city }}</td>
+          <td>{{bar.state}}</td>
           <td>{{ bar.phone }}</td>
         </tr>
     </ng-template>

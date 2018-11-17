@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export interface Bar {
-  name: string;
-  license: string;
+  barname: string;
+  lic: string;
   city: string;
   phone: string;
   addr: string;
