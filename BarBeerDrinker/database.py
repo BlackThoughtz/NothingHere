@@ -12,9 +12,8 @@ def get_bars():
 def find_bar(name):
     with engine.connect() as con:
         query = sql.text(
-            "SELECT barname, lic, city, state, phone, address FROM bars WHERE name = :name;"
+            "SELECT barname, lic, city, state, phone, address FROM bars WHERE barname = :name;"
         )
-
         rs = con.execute(query, name=name)
         result = rs.first()
         if result is None:

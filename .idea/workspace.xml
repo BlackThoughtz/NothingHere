@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d82c1497-d6c0-4907-8c43-2535d4b50488" name="Default Changelist" comment="All Queries done">
+    <list default="true" id="d82c1497-d6c0-4907-8c43-2535d4b50488" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarBeerDrinker/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/BarBeerDrinker/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Query text temp" beforeDir="false" afterPath="$PROJECT_DIR$/Query text temp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,22 +67,22 @@
           <entry key="Notes" value="3" />
           <entry key="Query text temp" value="5" />
           <entry key="css" value="9" />
-          <entry key="html" value="21" />
+          <entry key="html" value="22" />
           <entry key="json" value="8" />
           <entry key="py" value="32" />
           <entry key="sql" value="1" />
-          <entry key="ts" value="55" />
+          <entry key="ts" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="9" />
-          <entry key="HTML" value="21" />
+          <entry key="HTML" value="22" />
           <entry key="JSON" value="8" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="Python" value="32" />
           <entry key="Scratch" value="1" />
-          <entry key="TypeScript" value="55" />
+          <entry key="TypeScript" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -92,10 +92,10 @@
           <entry key="css" value="131" />
           <entry key="html" value="1447" />
           <entry key="json" value="751" />
-          <entry key="py" value="3374" />
+          <entry key="py" value="3378" />
           <entry key="sql" value="18" />
           <entry key="ts" value="1783" />
-          <entry key="txt" value="161" />
+          <entry key="txt" value="220" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -103,8 +103,8 @@
           <entry key="CSS" value="131" />
           <entry key="HTML" value="1447" />
           <entry key="JSON" value="751" />
-          <entry key="PLAIN_TEXT" value="1054" />
-          <entry key="Python" value="3370" />
+          <entry key="PLAIN_TEXT" value="1113" />
+          <entry key="Python" value="3374" />
           <entry key="SQL" value="4" />
           <entry key="Scratch" value="18" />
           <entry key="TypeScript" value="1783" />
@@ -123,13 +123,40 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="132" selection-start-line="132" selection-end-line="136" />
+            <state relative-caret-position="433">
+              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
               <folding>
                 <element signature="e#0#66#0" expanded="true" />
-                <marker date="1542429566375" expanded="true" signature="147:148" ph="..." />
-                <marker date="1542429566375" expanded="true" signature="3932:4006" ph="..." />
+                <marker date="1542429791368" expanded="true" signature="147:148" ph="..." />
+                <marker date="1542429791368" expanded="true" signature="3865:3868" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="78" lean-forward="true" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -202,7 +229,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="973" />
     <option name="width" value="954" />
     <option name="height" value="1047" />
   </component>
@@ -448,7 +475,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542425393169</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Re did database to work with our DV">
+      <created>1542429581388</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542429581388</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commited with bugs">
+      <created>1542429660965</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542429660965</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -461,10 +502,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="954" height="1047" extended-state="0" />
+    <frame x="973" y="0" width="954" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.33221477" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.6816192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,7 +519,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32968238" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.34282586" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34282586" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32968238" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32968238" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.329718" />
@@ -538,7 +579,9 @@
     <MESSAGE value="Added database Query functions" />
     <MESSAGE value="Added a lot Menu query works and displays" />
     <MESSAGE value="All Queries done" />
-    <option name="LAST_COMMIT_MESSAGE" value="All Queries done" />
+    <MESSAGE value="Re did database to work with our DV" />
+    <MESSAGE value="Commited with bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commited with bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -610,20 +653,6 @@
     </entry>
     <entry file="file://$USER_HOME$/Documents/Homework/336/SQL Project/BarBeerDrinker-master/BarBeerDrinker-master/server/BarBeerDrinker/database.py" />
     <entry file="file://$USER_HOME$/Documents/Homework/336/SQL Project/BarBeerDrinker-master/BarBeerDrinker-master/server/BarBeerDrinker/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/Homework/336/SQL Project/BarBeerDrinker-master/BarBeerDrinker-master/bbd-ui/src/app/bar-details/bar-details.component.spec.ts" />
     <entry file="file://$USER_HOME$/Documents/Homework/336/SQL Project/BarBeerDrinker-master/BarBeerDrinker-master/bbd-ui/src/app/bar-details/bar-details.component.ts" />
     <entry file="file://$PROJECT_DIR$/app.py">
@@ -695,13 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" lean-forward="true" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -786,14 +808,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="78" lean-forward="true" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="132" selection-start-line="132" selection-end-line="136" />
+        <state relative-caret-position="433">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
-            <marker date="1542429566375" expanded="true" signature="147:148" ph="..." />
-            <marker date="1542429566375" expanded="true" signature="3932:4006" ph="..." />
+            <marker date="1542429791368" expanded="true" signature="147:148" ph="..." />
+            <marker date="1542429791368" expanded="true" signature="3865:3868" ph="..." />
           </folding>
         </state>
       </provider>
