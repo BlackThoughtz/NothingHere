@@ -377,7 +377,7 @@ def beer_sales_by_time(beer):
                 FROM TRANSACTIONS
                 WHERE item IN(SELECT name AS item FROM beers)
                  )as beersales
-            LEFT JOIN bills ON beersales.Tid = `bills`.`﻿Trid`
+            LEFT JOIN bills ON beersales.Tid = `bills`.`﻿Trid`            
             WHERE Time > 2000 AND Item = :beer
             ORDER BY Time ASC 
         """)
