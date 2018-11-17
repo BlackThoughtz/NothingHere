@@ -91,7 +91,7 @@ def get_beers():
 def get_beer_manufacturers(beer):
     with engine.connect() as con:
         if beer is None:
-            rs = con.execute('SELECT DISTINCT manufacturer FROM beers;'
+            rs = con.execute('SELECT DISTINCT manufacturer FROM beers;')
             return [row['manf'] for row in rs]
 
         query = sql.text('SELECT manufacturer FROM beers WHERE name = :beer;')
@@ -127,12 +127,6 @@ def get_drinker_info(drinker_name):
         return dict(result)
 
 
-# for  top drinkers who are largest spenders,
 
-def get_top_drinkers():
-    with engine.connect() as con:
-        query = sql.text(
-
-        )
 
 
