@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 
+import {ChartsModule} from "ng2-charts";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -14,6 +16,7 @@ import { BarDetailsComponent } from './bar-details/bar-details.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
 import { BeersComponent } from './beers/beers.component';
 import { InsightComponent } from './insight/insight.component';
+import { BarchartsComponent } from './barcharts/barcharts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { InsightComponent } from './insight/insight.component';
     BarDetailsComponent,
     BeerDetailsComponent,
     BeersComponent,
-    InsightComponent
+    InsightComponent,
+    BarchartsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { InsightComponent } from './insight/insight.component';
     FormsModule,
     DropdownModule,
     TableModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

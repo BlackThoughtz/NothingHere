@@ -1,12 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask import jsonify
 from flask import make_response
 from flask import request
+
 import json
 
 from BarBeerDrinker import database
 
 app = Flask(__name__)
+
 
 @app.route('/api/bar', methods=["GET"])
 def get_bars():
@@ -131,3 +133,6 @@ def get_bar_frequent_counts():
         return jsonify(database.get_bar_frequent_counts())
     except Exception as e:
         return make_response(str(e), 500)
+
+
+
