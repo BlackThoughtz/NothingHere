@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d82c1497-d6c0-4907-8c43-2535d4b50488" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Class project-Default.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RUBRIC.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarBeerDrinker/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/BarBeerDrinker/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Query text temp" beforeDir="false" afterPath="$PROJECT_DIR$/Query text temp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,12 +36,12 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Query text temp">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="85">
-                    <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+                  <state relative-caret-position="748">
+                    <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
                   </state>
                 </provider>
               </entry>
@@ -52,14 +55,14 @@
     <session id="-1804427161">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,14 +91,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Notes" value="515" />
-          <entry key="Query text temp" value="378" />
+          <entry key="Query text temp" value="484" />
           <entry key="css" value="131" />
           <entry key="html" value="1447" />
           <entry key="json" value="751" />
-          <entry key="py" value="3378" />
+          <entry key="py" value="5579" />
           <entry key="sql" value="18" />
           <entry key="ts" value="1783" />
-          <entry key="txt" value="220" />
+          <entry key="txt" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -103,9 +106,9 @@
           <entry key="CSS" value="131" />
           <entry key="HTML" value="1447" />
           <entry key="JSON" value="751" />
-          <entry key="PLAIN_TEXT" value="1113" />
-          <entry key="Python" value="3374" />
-          <entry key="SQL" value="4" />
+          <entry key="PLAIN_TEXT" value="1227" />
+          <entry key="Python" value="5555" />
+          <entry key="SQL" value="24" />
           <entry key="Scratch" value="18" />
           <entry key="TypeScript" value="1783" />
         </counts>
@@ -123,31 +126,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="695">
+              <caret line="386" lean-forward="true" selection-start-line="386" selection-end-line="386" />
               <folding>
                 <element signature="e#0#66#0" expanded="true" />
-                <marker date="1542429791368" expanded="true" signature="147:148" ph="..." />
-                <marker date="1542429791368" expanded="true" signature="3865:3868" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="147:148" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="3943:3948" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="4524:4529" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="5253:5258" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="6081:7245" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="7284:7289" ph="..." />
+                <marker date="1542478828875" expanded="true" signature="11078:12333" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="78" lean-forward="true" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -155,7 +145,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="697">
               <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
             </state>
           </provider>
@@ -175,9 +165,11 @@
       <find>serv</find>
       <find>styles&quot;:</find>
       <find>BARS</find>
+      <find>License</find>
     </findStrings>
     <replaceStrings>
       <replace>bars</replace>
+      <replace>barname</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -229,8 +221,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="973" />
-    <option name="width" value="954" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -334,10 +326,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\butlr\PycharmProjects\BarsProj" />
       <recent name="C:\Users\butlr\PycharmProjects\BarsProj\BarBeerDrinker" />
       <recent name="C:\Users\butlr\PycharmProjects\BarsProj\bbd-ui\src" />
       <recent name="C:\Users\butlr\PycharmProjects\BarsProj\bbd-ui" />
-      <recent name="C:\Users\butlr\PycharmProjects\BarsProj" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -489,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542429660965</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="WORKS!!!">
+      <created>1542429956660</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542429956660</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -502,14 +501,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="973" y="0" width="954" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.6816192" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3107221" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33187294" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5151844" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -519,7 +518,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32968238" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34282586" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.34282586" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32968238" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32968238" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.329718" />
@@ -581,7 +580,8 @@
     <MESSAGE value="All Queries done" />
     <MESSAGE value="Re did database to work with our DV" />
     <MESSAGE value="Commited with bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commited with bugs" />
+    <MESSAGE value="WORKS!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKS!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,7 +589,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/bbd-ui/src/app/app.component.ts</url>
           <line>9</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -785,9 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="6" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,16 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Query text temp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -815,13 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -829,14 +808,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bbd-ui/src/app/bar-details/bar-details.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Query text temp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BarBeerDrinker/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="695">
+          <caret line="386" lean-forward="true" selection-start-line="386" selection-end-line="386" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
-            <marker date="1542429791368" expanded="true" signature="147:148" ph="..." />
-            <marker date="1542429791368" expanded="true" signature="3865:3868" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="147:148" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="3943:3948" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="4524:4529" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="5253:5258" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="6081:7245" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="7284:7289" ph="..." />
+            <marker date="1542478828875" expanded="true" signature="11078:12333" ph="..." />
           </folding>
         </state>
       </provider>
