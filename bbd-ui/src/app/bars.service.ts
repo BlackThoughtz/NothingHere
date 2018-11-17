@@ -17,6 +17,7 @@ export interface BarMenuItem {
   likes: number;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +25,8 @@ export class BarsService {
 
   constructor(
     public http: HttpClient
-  ) { }
+  ) {
+  }
 
   getBars() {
     return this.http.get<Bar[]>('/api/bar');
@@ -41,4 +43,7 @@ export class BarsService {
   getFrequentCounts() {
     return this.http.get<any[]>('/api/frequents-data');
   }
+
 }
+
+

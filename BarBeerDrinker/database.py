@@ -73,6 +73,12 @@ def get_bar_frequent_counts():
         results = [dict(row) for row in rs]
         return results
 
+def get_frequent_bar(drinker):
+    with engine.connect() as con:
+        query = sql.text('SELECT DISTINCT Bar FROM Frequents where Drinker = :drinker;')
+        rs = con.execute(query, drinker=drinker)
+        results = [dict(row) for row in rs]
+        return results
 
 def get_bar_cities():
     with engine.connect() as con:
