@@ -13,7 +13,7 @@ export class BeerDetailsComponent implements OnInit {
 
   beerName: string;
   beerLocations: BeerLocation[];
-  manufacturer: string;
+  manf: string;
 
   filterOptions: SelectItem[];
   sortField: string;
@@ -35,7 +35,7 @@ export class BeerDetailsComponent implements OnInit {
       this.beerService.getBeerManufacturers(this.beerName)
         .subscribe(
           data => {
-            this.manufacturer = data;
+            this.manf = data;
           }
         );
 

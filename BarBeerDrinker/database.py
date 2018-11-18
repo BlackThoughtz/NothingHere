@@ -23,7 +23,7 @@ def find_bar(name):
 def filter_beers(max_price):
     with engine.connect() as con:
         query = sql.text(
-            "SELECT * FROM sells WHERE price < :max_price;"
+            "SELECT * FROM sells WHERE item in (select name from beers) and price < 10;"
         )
 
         rs = con.execute(query, max_price=max_price)
@@ -50,11 +50,17 @@ def get_bar_menu(bar_name):
 
 def get_bars_selling(beer):
     with engine.connect() as con:
-        query = sql.text('SELECT a.barname, a.price\
-                FROM sells AS a\
-                WHERE a.item = :beer \
-                ORDER BY a.price; \
-            ')
+        query = sql.text("""
+        SELECT barname,item, price, customers
+        FROM sells
+        JOIN (
+            SELECT Bar, COUNT(*) AS customers FROM frequents GROUP BY name
+            ) as b
+        ON lice = b.Bar 
+        WHERE item = :beer
+        ORDER BY price ASC
+        
+        """)
         rs = con.execute(query, beer=beer)
         results = [dict(row) for row in rs]
         for i, _ in enumerate(results):
@@ -64,7 +70,7 @@ def get_bars_selling(beer):
 
 def get_bar_frequent_counts():
     with engine.connect() as con:
-        query = sql.text('SELECT Bar, count(*) as frequentCount \
+        query = sql.text('SELECT Bar, count(*) AS frequentCount \
                 FROM frequents \
                 GROUP BY Bar; \
             ')
@@ -90,10 +96,10 @@ def get_beers():
 def get_beer_manufacturers(beer):
     with engine.connect() as con:
         if beer is None:
-            rs = con.execute('SELECT DISTINCT manufacturer FROM beers;')
+            rs = con.execute('SELECT DISTINCT manufacturer as manf FROM beers;')
             return [row['manf'] for row in rs]
 
-        query = sql.text('SELECT manufacturer FROM beers WHERE name = :beer;')
+        query = sql.text('SELECT manufacturer as manf FROM beers WHERE name = :beer;')
         rs = con.execute(query, beer=beer)
         result = rs.first()
         if result is None:
@@ -131,7 +137,7 @@ def get_drinker_info(drinker_name):
 def get_top_spenders(bar_name):
     with engine.connect() as con: 
         query = sql.text(
-            'SELECT DName AS Drinker, SUM(Gross) AS spent\
+            'SELECT DName AS drinker, SUM(Gross) AS spent\
              FROM bills \
              WHERE bills.barname = :bar \
              GROUP BY Uid \

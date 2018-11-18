@@ -1,8 +1,8 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">{{ beerName }}</h1>
-    <p class="beer-details" *ngIf="manufacturer">
-      Made by <i>{{ manufacturer }}</i>
+    <p class="beer-details" *ngIf="manf">
+      Made by <i>{{ manf }}</i>
     </p>
   </div>
 </div>
@@ -28,6 +28,7 @@
       <tr>
         <td><a routerLink="/bars/{{ bar.barname }}">{{ bar.barname }}</a></td>
         <td>{{ bar.price | currency }}</td>
+        <td>{{ bar.customers}}</td>
       </tr>
     </ng-template>
   </p-table>

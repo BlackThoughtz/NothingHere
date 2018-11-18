@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {BarsService, TopTen} from "../bars.service";
 
 @Component({
   selector: 'app-barcharts',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barcharts.component.css']
 })
 export class BarchartsComponent implements OnInit {
+
+  barName: string;
 
 public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -20,9 +24,12 @@ public barChartOptions = {
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
     {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
   ];
-  constructor() { }
+  constructor(
+  ) {
+    //GET BAR NAME
+  }
 
-  ngOnInit() {
+  ngOnInit(){
   }
 
 }
