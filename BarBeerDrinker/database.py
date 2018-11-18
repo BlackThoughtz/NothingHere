@@ -86,7 +86,7 @@ def get_bar_cities():
 
 
 def get_beers():
-    """Gets a list of beer names from the beers table."""
+    """gets a list of beer names from the beers table."""
 
     with engine.connect() as con:
         rs = con.execute('SELECT name, manufacturer FROM beers;')
@@ -114,7 +114,7 @@ def get_drinkers():
 
 
 def get_likes(drinker_name):
-    """Gets a list of beers liked by the drinker provided."""
+    """gets a list of beers liked by the drinker provided."""
 
     with engine.connect() as con:
         query = sql.text('SELECT beer FROM likes WHERE name = :name;')
@@ -155,7 +155,7 @@ def get_top_spenders(bar_name):
 
 def beers_by_popularity(bar_name):
     with engine.connect() as con:
-        query = sql.text("""
+        query = sql.text('''
             SELECT item, barname,COUNT(item) AS sold
             FROM(
                 SELECT item, tid, barname
@@ -166,11 +166,11 @@ def beers_by_popularity(bar_name):
                  )as beersales
                  JOIN bars ON beersales.license = bars.lic
                  ) AS beerswnames
-            WHERE barname = 'Dive Bar'
+            WHERE barname = 'Dive Bar' 
             GROUP BY item
             ORDER BY sold
-            """
-            )
+        
+       ''' )
         rs = con.execute(query, bar=bar_name)
         return [dict(row) for row in rs]
 
@@ -178,22 +178,22 @@ def beers_by_popularity(bar_name):
 
 def manufacturers_by_popularity(bar_name):
     with engine.connect() as con:
-        query = sql.text("""
-        SELECT name, barname, manufacturer, COUNT(manufacturer) AS sold
-        FROM (
-            SELECT  name, manufacturer, License,Tid
-            FROM(
-                SELECT *
-                FROM trans
-                WHERE item IN(SELECT name AS item FROM beers)
-                ) as beersales
-            JOIN beers ON beersales.item = beers.name
-            ) AS saleswman
-        JOIN bars ON bars.lic = saleswman.License
-        WHERE barname = :bar
-        GROUP BY Manufacturer
-        ORDER BY sold DESC
-        """
+        query = sql.text(
+        'SELECT name, barname, manufacturer, COUNT(manufacturer) AS sold\
+        FROM (\
+            SELECT  name, manufacturer, License,Tid\
+            FROM(\
+                SELECT *\
+                FROM trans\
+                WHERE item IN(SELECT name AS item FROM beers)\
+                ) as beersales\
+            JOIN beers ON beersales.item = beers.name\
+            ) AS saleswman\
+        JOIN bars ON bars.lic = saleswman.License\
+        WHERE barname = :bar\
+        GROUP BY Manufacturer\
+        ORDER BY sold DESC'
+
                          )
         rs = con.execute(query, bar=bar_name)
         return [dict(row) for row in rs]
@@ -237,22 +237,7 @@ def sales_by_time(bar_name):
 
 #Show Busiest Day of the week
 
-def busiest_day_of_the_week(bar_name):
-    with engine.connect() as con:
-        query = ("""
-        SELECT barname, `bills`.`﻿Date`, aday, sum(Gross) AS DailyTotal
-        FROM bills
-        WHERE barname = :bar
-        GROUP BY aday
-        ORDER BY `bills`.`﻿Date`
-        """)
 
-        rs = con.execute(query, bar=bar_name)
-        results = [dict(row) for row in rs]
-        for i, _ in enumerate(results):
-            results[i]['DailyTotal'] = float(results[i]['DailyTotal'])
-
-        return results
 
 # 1.Given a drinker, show all his/her transactions ordered by time and grouped by different bars
 
@@ -358,8 +343,8 @@ def biggest_consumers(beer):
 
 def beer_sales_by_time(beer):
     with engine.connect() as con:
-        query = ("""
-            SELECT TIME, COUNT(item) AS soldEarly
+        query = (
+            """SELECT TIME, COUNT(item) AS soldEarly
             FROM (
                 SELECT *
                 FROM TRANSACTIONS
@@ -381,12 +366,12 @@ def beer_sales_by_time(beer):
             FROM (
                 SELECT *
                 FROM TRANSACTIONS
-                WHERE item IN(SELECT name AS item FROM beers)
-                 )as beersales
-            LEFT JOIN bills ON beersales.Tid = `bills`.`﻿Trid`            
+                WHERE item IN(SELECT name AS item FROM beers)\
+                 )as beersales\
+            LEFT JOIN bills ON beersales.Tid = `bills`.`﻿Trid`  
             WHERE Time > 2000 AND Item = :beer
-            ORDER BY Time ASC 
-        """)
+            ORDER BY Time ASC"""
+        )
 
         rs = con.execute(query, beer=beer)
         return [dict(row) for row in rs]

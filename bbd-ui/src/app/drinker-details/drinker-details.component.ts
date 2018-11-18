@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BarsService, Bar} from "../bars.service";
 import {SelectItem} from "primeng/components/common/selectitem";
-import {Bar, Beer, DrinkersService} from "../drinkers.service";
+import {bar, Beer, DrinkersService} from "../drinkers.service";
 
 @Component({
   selector: 'app-drinker-details',
@@ -12,7 +12,7 @@ import {Bar, Beer, DrinkersService} from "../drinkers.service";
 export class DrinkerDetailsComponent implements OnInit {
 
   drinkerName: string;
-  bars: Bar[];
+  bars: bar[];
   likes: Beer[];
 
   constructor(private drinkerService: DrinkersService, private route: ActivatedRoute) {

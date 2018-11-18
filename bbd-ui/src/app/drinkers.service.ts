@@ -18,7 +18,7 @@ export interface Beer {
 
 }
 
-export interface Bar {
+export interface bar {
   Bar: string;
 }
 
@@ -38,7 +38,7 @@ export class DrinkersService {
   }
 
   getFrequentBar(drinker: string){
-    return this.http.get<Bar[]>('/api/frequent' + drinker);
+    return this.http.get<bar[]>('/api/frequent' + drinker);
   }
 
   getLikes(drinker: string){
