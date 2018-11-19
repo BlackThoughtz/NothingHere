@@ -81,7 +81,7 @@ export class DrinkerDetailsComponent implements OnInit {
             spent.push(obj.spent);
           });
 
-          this.renderByBar(bar,spent);
+          this.renderByBar(bar,date, spent);
 
         }
       );
@@ -141,18 +141,18 @@ export class DrinkerDetailsComponent implements OnInit {
     });
   }
 
-  renderByBar(bar: string[], spent: number[]) {
+  renderByBar(bar: string[],  spent: number[]) {
     Highcharts.chart('byBar', {
       chart: {
         type: 'column'
       },
       title: {
-        text: 'Orders At A Bar By ' + this.dName
+        text: 'Daily Orders Grouped By Bar For ' + this.dName
       },
       xAxis: {
         categories: bar,
         title: {
-          text: 'Beer'
+          text: 'Bar'
         }
       },
       yAxis: {
