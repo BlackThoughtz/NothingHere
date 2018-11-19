@@ -3,6 +3,7 @@ from flask import jsonify
 from flask import make_response
 from flask import request
 
+
 import json
 
 from BarBeerDrinker import database
@@ -84,10 +85,10 @@ def get_manufacturers_making(beer):
         return make_response(str(e), 500)
 
 
-@app.route("/api/likes", methods=["GET"])
-def get_likes():
+@app.route("/api/likes/<name>", methods=["GET"])
+def get_likes(name):
     try:
-        drinker = request.args.get("drinker")
+        drinker = name
         if drinker is None:
             raise ValueError("Drinker is not specified.")
         return jsonify(database.get_likes(drinker))
@@ -257,7 +258,7 @@ def get_spending_by_bar(name):
         return make_response(str(e), 500)
 
 
-
+#Show top 10 places where beer sells the most
 @app.route('/api/beerq/<beer>/topbars', methods=['GET'])
 def get_top_bars_by_beer(beer):
     try:
@@ -269,6 +270,7 @@ def get_top_bars_by_beer(beer):
     except Exception as e:
         return make_response(str(e), 500)
 
+#show also drinkers who are the biggest consumers of this beer
 @app.route('/api/beerq/<beer>/consumers', methods=['GET'])
 def get_top_consumers(beer):
     try:
@@ -279,6 +281,8 @@ def get_top_consumers(beer):
         return make_response(str(e), 400)
     except Exception as e:
         return make_response(str(e), 500)
+
+# time distribution of when this beer sells the most.
 @app.route('/api/beerq/<beer>/bytime', methods=['GET'])
 def get_beer_by_time(beer):
     try:

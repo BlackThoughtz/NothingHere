@@ -17,6 +17,8 @@ import { BeerDetailsComponent } from './beer-details/beer-details.component';
 import { BeersComponent } from './beers/beers.component';
 import { InsightComponent } from './insight/insight.component';
 import { BarchartsComponent } from './barcharts/barcharts.component';
+import { DrinkerDetailsComponent } from './drinker-details/drinker-details.component';
+import { DrinkersComponent } from './drinkers/drinkers.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BarchartsComponent } from './barcharts/barcharts.component';
     BeerDetailsComponent,
     BeersComponent,
     InsightComponent,
-    BarchartsComponent
+    BarchartsComponent,
+    DrinkerDetailsComponent,
+    DrinkersComponent
   ],
   imports: [
     BrowserModule,
