@@ -16,13 +16,12 @@ export interface Likes {
 }
 
 export interface Transactions {
-  bar: string;
-  bartender: string;
-  drinker: string;
-  spent: number;
+  barname: string;
+  ename: string;
+  gross: number;
   tip: number;
-  time: number;
-  date: string;
+  tim: number;
+  dat: string;
 }
 
 
@@ -52,7 +51,7 @@ export class DrinkersService {
   }
 
   getMostOrdered(drinker: string){
-    return this.http.get<Drinker>('/api/drinker/' + drinker + '/orders')
+    return this.http.get<any[]>('/api/drinker/' + drinker + '/orders')
   }
   getSpendingByBar(drinker: string){
     return this.http.get<any[]>('/api/drinker/' + drinker + '/bydates')

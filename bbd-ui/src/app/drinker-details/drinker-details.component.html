@@ -1,0 +1,75 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">{{ dName }}</h1>
+        <p class="drinker-details" *ngIf="drinkerDetails">
+            {{ drinkerDetails?.address }} <span *ngIf="drinkerDetails.address && drinkerDetails.city">|</span> {{ drinkerDetails?.city }}, {{drinkerDetails.state}}
+            <br>
+            {{ drinkerDetails?.phone }}
+        </p>
+    </div>
+</div>
+
+
+<div class="container">
+  <h2 class="text-center font-weight-light"> Beers {{dName}} Enjoys</h2>
+  <br>
+  <p-table [value]="likes">
+    <ng-template pTemplate="header">
+      <tr>
+        <th> Beer</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+            <tr>
+                <td><a routerLink="/beers/{{ item.beer }}">{{ item.beer }}</a></td>
+
+            </tr>
+    </ng-template>
+
+  </p-table>
+</div>
+<br>
+<br>
+<div class="container">
+  <h2 class="text-center font-weight-light"> Transactions for: {{dName}} </h2>
+  <br>
+  <p-table [value]="trans">
+    <ng-template pTemplate="header">
+      <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Bar</th>
+          <th>Bartender</th>
+          <th>Tip</th>
+          <th>Total Spent</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-tr>
+            <tr>
+              <td>{{ tr.dat }}</td>
+              <td>{{ tr.tim}}</td>
+              <td>{{ tr.barname}}</td>
+              <td>{{ tr.ename }}</td>
+              <td>{{ tr.tip | currency}}</td>
+              <td>{{ tr.gross | currency}}</td>
+
+            </tr>
+    </ng-template>
+
+  </p-table>
+</div>
+
+
+<script src="drinker-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="mostOrdered"></div>
+</div>
+
+<script src="drinker-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="byBar"></div>
+</div>
+
+

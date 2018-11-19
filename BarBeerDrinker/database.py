@@ -252,18 +252,18 @@ def busiest_day_of_the_week(bar_name):
 def drinker_transactions(name):
     with engine.connect() as con:
         query = sql.expression.text("""
-            SELECT barname, `bills`.`E﻿name`, DName, Gross, Tip, `bills`.`Time`, `bills`.`﻿Date`
+            SELECT barname, `bills`.`E﻿name` as ename, Gross as gross, Tip as tip, tim, dat
             FROM bills
-            WHERE DName = :name
+            WHERE dname = :name
             GROUP BY barname
-            ORDER BY Time;
+            ORDER BY tim
         """)
 
         rs = con.execute(query, name=name)
         results = [dict(row) for row in rs]
         for i, _ in enumerate(results):
-            results[i]['Gross'] = float(results[i]['Gross'])
-            results[i]['Tip'] = float(results[i]['Tip'])
+            results[i]['gross'] = float(results[i]['gross'])
+            results[i]['tip'] = float(results[i]['tip'])
         return results
 
 # Show bar graphs of beers s/he orders the most.
@@ -277,8 +277,6 @@ def most_ordered_beers(name):
                 WHERE item IN(SELECT name AS item FROM beers)) AS tab
             WHERE tab.Tid IN (SELECT `bills`.`﻿Trid` FROM bills  WHERE bills.DName = :name)
             GROUP BY item
-         
-
         """)
 
         rs = con.execute(query, name=name)
@@ -290,18 +288,16 @@ def most_ordered_beers(name):
 def spending_by_bar(name):
     with engine.connect() as con:
         query = sql.expression.text("""
-            SELECT barname, `bills`.`E﻿name`, Dname, Uid, `bills`.`Time`, `bills`.`﻿Date`, Gross, Tip
+            SELECT  barname, dat, SUM(Gross) as spent
             FROM bills
             WHERE bills.Dname = :name
-            GROUP BY `bills`.`﻿Date`
-       
+            GROUP BY barname,dat
         """)
 
         rs = con.execute(query, name=name)
         results = [dict(row) for row in rs]
         for i, _ in enumerate(results):
-            results[i]['Gross'] = float(results[i]['Gross'])
-            results[i]['Tip'] = float(results[i]['Tip'])
+            results[i]['spent'] = float(results[i]['spent'])
         return results
 
 # Show top 10 places where beer sells the most
