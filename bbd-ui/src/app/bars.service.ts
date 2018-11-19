@@ -24,6 +24,7 @@ export interface TopTen {
   spent: string
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +32,8 @@ export class BarsService {
 
   constructor(
     public http: HttpClient
-  ) { }
+  ) {
+  }
 
   getBars() {
     return this.http.get<Bar[]>('/api/bar');
@@ -67,4 +69,7 @@ export class BarsService {
   getSalesByDay(bar: string) {
     return this.http.get<any[]>('/api/bar/' + bar + '/byday');
   }
+
 }
+
+

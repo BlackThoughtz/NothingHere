@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+
 import {Bar} from "./bars.service";
 
 export interface Drinker {
@@ -25,10 +26,12 @@ export interface Transactions {
 }
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DrinkersService {
+
 
   constructor(
     public http: HttpClient
@@ -55,5 +58,6 @@ export class DrinkersService {
   }
   getSpendingByBar(drinker: string){
     return this.http.get<any[]>('/api/drinker/' + drinker + '/bydates')
+
   }
 }
