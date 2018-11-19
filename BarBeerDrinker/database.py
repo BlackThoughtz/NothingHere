@@ -78,6 +78,12 @@ def get_bar_frequent_counts():
         results = [dict(row) for row in rs]
         return results
 
+def get_frequent_bar(drinker):
+    with engine.connect() as con:
+        query = sql.text('SELECT DISTINCT Bar FROM Frequents where Drinker = :drinker;')
+        rs = con.execute(query, drinker=drinker)
+        results = [dict(row) for row in rs]
+        return results
 
 def get_bar_cities():
     with engine.connect() as con:
@@ -86,7 +92,7 @@ def get_bar_cities():
 
 
 def get_beers():
-    """Gets a list of beer names from the beers table."""
+    """gets a list of beer names from the beers table."""
 
     with engine.connect() as con:
         rs = con.execute('SELECT name, manufacturer FROM beers;')
@@ -114,7 +120,7 @@ def get_drinkers():
 
 
 def get_likes(drinker_name):
-    """Gets a list of beers liked by the drinker provided."""
+    """gets a list of beers liked by the drinker provided."""
 
     with engine.connect() as con:
         query = sql.text('SELECT beer FROM likes WHERE drinker = :name;')
@@ -157,6 +163,7 @@ def beers_by_popularity(bar_name):
     with engine.connect() as con:
         query = sql.text("""
             SELECT item, COUNT(item) AS sold
+
             FROM(
                 SELECT item, tid, barname
                 FROM (
@@ -166,11 +173,12 @@ def beers_by_popularity(bar_name):
                  )as beersales
                  JOIN bars ON beersales.license = bars.lic
                  ) AS beerswnames
+
             WHERE barname = :bar
             GROUP BY item
             ORDER BY sold
-            """
-            )
+        
+       ''' )
         rs = con.execute(query, bar=bar_name)
         return [dict(row) for row in rs]
 
@@ -178,6 +186,7 @@ def beers_by_popularity(bar_name):
 
 def manufacturers_by_popularity(bar_name):
     with engine.connect() as con:
+
         query = sql.text("""
         SELECT manufacturer, COUNT(manufacturer) AS sold
         FROM (
@@ -193,6 +202,7 @@ def manufacturers_by_popularity(bar_name):
         WHERE barname = :bar
         GROUP BY manufacturer
         """
+
                          )
         rs = con.execute(query, bar=bar_name)
         return [dict(row) for row in rs]
@@ -230,6 +240,7 @@ def sales_by_time(bar_name):
 
 #Show Busiest Day of the week
 
+
 def busiest_day_of_the_week(bar_name):
     with engine.connect() as con:
         query = sql.expression.text("""
@@ -245,7 +256,7 @@ def busiest_day_of_the_week(bar_name):
         for i, _ in enumerate(results):
             results[i]['DailyTotal'] = float(results[i]['DailyTotal'])
 
-        return results
+
 
 # 1.Given a drinker, show all his/her transactions ordered by time and grouped by different bars
 
@@ -383,6 +394,7 @@ def beer_sales_by_time(beer):
             
             limit 5;
         """)
+
 
         rs = con.execute(query, beer=beer, beers=beer, beerd=beer)
         results = [dict(row) for row in rs]

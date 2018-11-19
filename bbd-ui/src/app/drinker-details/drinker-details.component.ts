@@ -4,12 +4,15 @@ import {DrinkersService, Drinker, Likes, Transactions} from "../drinkers.service
 import {HttpResponse} from "@angular/common/http";
 declare const Highcharts: any;
 
+
+
 @Component({
   selector: 'app-drinker-details',
   templateUrl: './drinker-details.component.html',
   styleUrls: ['./drinker-details.component.css']
 })
 export class DrinkerDetailsComponent implements OnInit {
+
 
   dName: string;
   id: string;
@@ -40,10 +43,12 @@ export class DrinkerDetailsComponent implements OnInit {
       );
 
       drinkerService.getLikes(this.dName).subscribe(
+
         data => {
           this.likes = data;
         }
       );
+
 
       this.drinkerService.getTransactions(this.dName).subscribe(
         data => {
@@ -181,6 +186,8 @@ export class DrinkerDetailsComponent implements OnInit {
         data: spent
       }]
     });
+
+ 
   }
 
 }
