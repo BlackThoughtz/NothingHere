@@ -28,11 +28,13 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.css",
               "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/highcharts/css/highcharts.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/highcharts/highcharts.js"
             ]
           },
           "configurations": {

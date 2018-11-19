@@ -1,47 +1,63 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Bar,BarsService, BarMenuItem} from "./bars.service";
-import {BeersService} from "./beers.service";
-import {BeerDetailsComponent} from "./beer-details/beer-details.component";
+
+import {Bar} from "./bars.service";
 
 export interface Drinker {
-  DName: string;
+  dname: string;
   phone: string;
-  Address: string;
-  City: string;
-  State: string;
-  User_ID: string;
+  address: string;
+  city: string;
+  state: string;
+  userid: string;
+  
+}
+export interface Likes {
+  beer: string;
 }
 
-export interface Beer {
-  Likes: string;
-
+export interface Transactions {
+  barname: string;
+  ename: string;
+  gross: number;
+  tip: number;
+  tim: number;
+  dat: string;
 }
 
-export interface bar {
-  Bar: string;
-}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DrinkersService {
 
-  constructor(public http: HttpClient) { }
 
-  getDrinkers(){
+  constructor(
+    public http: HttpClient
+  ) { }
+  
+  getDrinkers() {
     return this.http.get<Drinker[]>('/api/drinker');
   }
 
-  getDrinker(drinker: string) {
-    return this.http.get<Drinker>('/api/drinker' + drinker);
-  }
-
-  getFrequentBar(drinker: string){
-    return this.http.get<bar[]>('/api/frequent' + drinker);
+  getDrinker(drinker: string){
+    return this.http.get<Drinker>('/api/drinker/' + drinker);
   }
 
   getLikes(drinker: string){
-    return this.http.get<Beer[]>('/api/likes' + drinker);
+    return this.http.get<Likes[]>('/api/likes/' + drinker);
+  }
+
+  getTransactions(drinker: string){
+    return this.http.get<Transactions[]>('/api/drinker/' + drinker + '/drinkertrans')
+  }
+
+  getMostOrdered(drinker: string){
+    return this.http.get<any[]>('/api/drinker/' + drinker + '/orders')
+  }
+  getSpendingByBar(drinker: string){
+    return this.http.get<any[]>('/api/drinker/' + drinker + '/bydates')
+
   }
 }

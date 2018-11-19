@@ -19,6 +19,11 @@ export interface BarMenuItem {
   likes: number;
 }
 
+export interface TopTen {
+  drinker: string;
+  spent: string
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +49,25 @@ export class BarsService {
 
   getFrequentCounts() {
     return this.http.get<any[]>('/api/frequents-data');
+  }
+
+  getTopTen(bar: string) {
+    return this.http.get<TopTen[]>('/api/bar/' + bar + '/topten');
+  }
+
+  getTopBeers(bar: string) {
+    return this.http.get<any[]>('/api/bar/' + bar + '/topbeers');
+  }
+  getTopManf(bar: string) {
+    return this.http.get<any[]>('/api/bar/' + bar + '/topmanf');
+  }
+
+  getSalesByTime(bar: string) {
+    return this.http.get<any[]>('/api/bar/' + bar + '/bytime');
+  }
+
+  getSalesByDay(bar: string) {
+    return this.http.get<any[]>('/api/bar/' + bar + '/byday');
   }
 
 }

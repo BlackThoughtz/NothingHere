@@ -31,8 +31,36 @@
     </p-table>
   <br>
   <br>
-</div>
 
+
+
+
+
+
+</div>
+<!--
+<div class="container">
+  <h2 class="text-center font-weight-light"> Top Ten</h2>
+  <br>
+
+  <p-table [value]="topTen">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Drinker</th>
+                <th>Spent</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-top>
+            <tr>
+                <td>{{ top.Drinker }}</td>
+                <td>{{ top.spent | currency }}</td>
+
+            </tr>
+        </ng-template>
+  </p-table>
+ <br>
+  <br>
+</div>
 
 <div class="container">
   <ul class="nav nav-tabs">
@@ -40,7 +68,7 @@
       <a class="nav-link" routerLink="/barcharts">Bar Chart</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/doughnut-chart">Doughnut Chart</a>
+      <a class="nav-link" routerLink="/simple-chart">Doughnut Chart</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/radar-chart">Radar Chart</a>
@@ -55,3 +83,44 @@
   </div>
 </div>
 
+-->
+<script src="bar-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="topTen"></div>
+</div>
+
+<br>
+
+<script src="bar-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="topBeers"></div>
+</div>
+
+<br>
+
+
+<script src="bar-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="topManf"></div>
+</div>
+
+
+<br>
+
+
+<script src="bar-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="byTime"></div>
+</div>
+
+
+
+<script src="bar-details.component.ts"></script>
+<div class="container">
+  <br>
+  <div id="byDay"></div>
+</div>

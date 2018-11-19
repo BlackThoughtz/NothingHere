@@ -1,13 +1,13 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">{{title}}</h1>
-    <p class="lead">This is a demo application to learn how to create a clean, responsive web interface.</p>
+    <p class="lead">Bar Beer Drinker Ui for 2</p>
   </div>
 </div>
 
 <div class="container">
 
-  <p-table [value]="bars">
+  <p-table [value]="bars" [paginator]="true" [rows]="10">
     <ng-template pTemplate="header">
         <tr>
           <th>Name</th>

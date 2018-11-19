@@ -23,7 +23,7 @@ export class InsightComponent implements OnInit {
           counts.push(bar.frequentCount);
         });
 
-        this.renderChart(bars, counts);
+        this.renderCount(bars, counts);
       }
     );
   }
@@ -31,7 +31,7 @@ export class InsightComponent implements OnInit {
   ngOnInit() {
   }
 
-  renderChart(bars: string[], counts: number[]) {
+  renderCount(bars: string[], counts: number[]) {
     Highcharts.chart('bargraph', {
       chart: {
         type: 'column'
@@ -72,5 +72,6 @@ export class InsightComponent implements OnInit {
       }]
     });
   }
+
 
 }
