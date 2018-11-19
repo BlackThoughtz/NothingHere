@@ -11,7 +11,7 @@ import {DrinkersComponent} from "./drinkers/drinkers.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'static',
     pathMatch: 'full',
     redirectTo: 'bars'
   },
