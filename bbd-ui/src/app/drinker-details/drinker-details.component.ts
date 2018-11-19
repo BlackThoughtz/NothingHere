@@ -81,7 +81,7 @@ export class DrinkerDetailsComponent implements OnInit {
             spent.push(obj.spent);
           });
 
-          this.renderByBar(bar,date, spent);
+          this.renderByBar(bar, spent);
 
         }
       );
